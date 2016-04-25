@@ -1,64 +1,121 @@
 #include "formulas.h"
 #include "math.h"
+#include <vector>
+#include <numeric>
 
+struct Air {
+    std::vector<double> Temperature = { -20, -19, -18, -17, -16, -15, -14, -13, -12, -11,
+                                        -10, -9, -8, -7, -6, -5, -4, -3, -2, -1,
+                                        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                                        11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                                        21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
+    std::vector<double> Lambda = { 2.280, 2.288, 2.296, 2.304, 2.312, 2.320, 2.328, 2.336, 2.344, 2.352,
+                                   2.360, 2.368, 2.376, 2.384, 2.392, 2.400, 2.408, 2.416, 2.424, 2.432,
+                                   2.440, 2.447, 2.454, 2.461, 2.468, 2.475, 2.482, 2.489, 2.496, 2.503, 2.510,
+                                   2.518, 2.526, 2.534, 2.542, 2.550, 2.558, 2.566, 2.574, 2.582, 2.590,
+                                   2.598, 2.606, 2.614, 2.622, 2.630, 2.638, 2.646, 2.654, 2.662, 2.670 }; //Warning!!! Values must be used after pow(10,-2).
+    std::vector<double> Ni = { 12.790, 12.754, 12.718, 12.682, 12.646, 12.610, 12.574, 12.538, 12.502, 12.466,
+                               12.430, 12.515, 12.600, 12.685, 12.770, 12.855, 12.940, 13.025, 13.110, 13.195,
+                               13.280, 13.368, 13.456, 13.544, 13.632, 13.720, 13.808, 13.896, 13.984, 14.072, 14.160,
+                               14.250, 14.340, 14.430, 14.520, 14.610, 14.700, 14.790, 14.880, 14.970, 15.060,
+                               15.154, 15.248, 15.342, 15.436, 15.530, 15.624, 15.718, 15.812, 15.906, 16.000 }; //Warning!!! Values must used after pow(10,-6).
+    std::vector<double> Pr = { 0.7160, 0.7156, 0.7152, 0.7148, 0.7144, 0.7140, 0.7136, 0.7132, 0.7128, 0.7124,
+                               0.7120, 0.7115, 0.7110, 0.7105, 0.7100, 0.7095, 0.7090, 0.7085, 0.7080, 0.7075,
+                               0.7070, 0.7068, 0.7066, 0.7064, 0.7062, 0.7060, 0.7058, 0.7056, 0.7054, 0.7052, 0.7050,
+                               0.7048, 0.7046, 0.7044, 0.7042, 0.7040, 0.7038, 0.7036, 0.7034, 0.7032, 0.7030,
+                               0.7028, 0.7026, 0.7024, 0.7022, 0.7020, 0.7018, 0.7016, 0.7014, 0.7012, 0.7010 };
+} airData;
 
-void InitAirData(void)
+double forecast(const double &x, const std::vector<double> &known_X, const std::vector<double> &known_Y )
 {
-    airData[0].Temperature = -20; airData[0].Lambda = 2.280; airData[0].Ni = 12.790; airData[0].Pr = 0.7160;
-    airData[1].Temperature = -19; airData[1].Lambda = 2.288; airData[1].Ni = 12.754; airData[1].Pr = 0.7156;
-    airData[2].Temperature = -18; airData[2].Lambda = 2.296; airData[2].Ni = 12.718; airData[2].Pr = 0.7152;
-    airData[3].Temperature = -17; airData[3].Lambda = 2.304; airData[3].Ni = 12.682; airData[3].Pr = 0.7148;
-    airData[4].Temperature = -16; airData[4].Lambda = 2.312; airData[4].Ni = 12.646; airData[4].Pr = 0.7144;
-    airData[5].Temperature = -15; airData[5].Lambda = 2.320; airData[5].Ni = 12.610; airData[5].Pr = 0.7140;
-    airData[6].Temperature = -14; airData[6].Lambda = 2.328; airData[6].Ni = 12.574; airData[6].Pr = 0.7136;
-    airData[7].Temperature = -13; airData[7].Lambda = 2.336; airData[7].Ni = 12.538; airData[7].Pr = 0.7132;
-    airData[8].Temperature = -12; airData[8].Lambda = 2.344; airData[8].Ni = 12.502; airData[8].Pr = 0.7128;
-    airData[9].Temperature = -11; airData[9].Lambda = 2.352; airData[9].Ni = 12.466; airData[9].Pr = 0.7124;
-    airData[10].Temperature = -10; airData[10].Lambda = 2.360; airData[10].Ni = 12.430; airData[10].Pr = 0.7120;
-    airData[11].Temperature = -9; airData[11].Lambda = 2.368; airData[11].Ni = 12.515; airData[11].Pr = 0.7115;
-    airData[12].Temperature = -8; airData[12].Lambda = 2.376; airData[12].Ni = 12.600; airData[12].Pr = 0.7110;
-    airData[13].Temperature = -7; airData[13].Lambda = 2.384; airData[13].Ni = 12.685; airData[13].Pr = 0.7105;
-    airData[14].Temperature = -6; airData[14].Lambda = 2.392; airData[14].Ni = 12.770; airData[14].Pr = 0.7100;
-    airData[15].Temperature = -5; airData[15].Lambda = 2.400; airData[15].Ni = 12.855; airData[15].Pr = 0.7095;
-    airData[16].Temperature = -4; airData[16].Lambda = 2.408; airData[16].Ni = 12.940; airData[16].Pr = 0.7090;
-    airData[17].Temperature = -3; airData[17].Lambda = 2.416; airData[17].Ni = 13.025; airData[17].Pr = 0.7085;
-    airData[18].Temperature = -2; airData[18].Lambda = 2.424; airData[18].Ni = 13.110; airData[18].Pr = 0.7080;
-    airData[19].Temperature = -1; airData[19].Lambda = 2.432; airData[19].Ni = 13.195; airData[19].Pr = 0.7075;
-    airData[20].Temperature = 0; airData[20].Lambda = 2.440; airData[20].Ni = 13.280; airData[20].Pr = 0.7070;
-    airData[21].Temperature = 1; airData[21].Lambda = 2.447; airData[21].Ni = 13.368; airData[21].Pr = 0.7068;
-    airData[22].Temperature = 2; airData[22].Lambda = 2.454; airData[22].Ni = 13.456; airData[22].Pr = 0.7066;
-    airData[23].Temperature = 3; airData[23].Lambda = 2.461; airData[23].Ni = 13.544; airData[23].Pr = 0.7064;
-    airData[24].Temperature = 4; airData[24].Lambda = 2.468; airData[24].Ni = 13.632; airData[24].Pr = 0.7062;
-    airData[25].Temperature = 5; airData[25].Lambda = 2.475; airData[25].Ni = 13.720; airData[25].Pr = 0.7060;
-    airData[26].Temperature = 6; airData[26].Lambda = 2.482; airData[26].Ni = 13.808; airData[26].Pr = 0.7058;
-    airData[27].Temperature = 7; airData[27].Lambda = 2.489; airData[27].Ni = 13.896; airData[27].Pr = 0.7056;
-    airData[28].Temperature = 8; airData[28].Lambda = 2.496; airData[28].Ni = 13.984; airData[28].Pr = 0.7054;
-    airData[29].Temperature = 9; airData[29].Lambda = 2.503; airData[29].Ni = 14.072; airData[29].Pr = 0.7052;
-    airData[30].Temperature = 10; airData[30].Lambda = 2.510; airData[30].Ni = 14.160; airData[30].Pr = 0.7050;
-    airData[31].Temperature = 11; airData[31].Lambda = 2.518; airData[31].Ni = 14.250; airData[31].Pr = 0.7048;
-    airData[32].Temperature = 12; airData[32].Lambda = 2.526; airData[32].Ni = 14.340; airData[32].Pr = 0.7046;
-    airData[33].Temperature = 13; airData[33].Lambda = 2.534; airData[33].Ni = 14.430; airData[33].Pr = 0.7044;
-    airData[34].Temperature = 14; airData[34].Lambda = 2.542; airData[34].Ni = 14.520; airData[34].Pr = 0.7042;
-    airData[35].Temperature = 15; airData[35].Lambda = 2.550; airData[35].Ni = 14.610; airData[35].Pr = 0.7040;
-    airData[36].Temperature = 16; airData[36].Lambda = 2.558; airData[36].Ni = 14.700; airData[36].Pr = 0.7038;
-    airData[37].Temperature = 17; airData[37].Lambda = 2.566; airData[37].Ni = 14.790; airData[37].Pr = 0.7036;
-    airData[38].Temperature = 18; airData[38].Lambda = 2.574; airData[38].Ni = 14.880; airData[38].Pr = 0.7034;
-    airData[39].Temperature = 19; airData[39].Lambda = 2.582; airData[39].Ni = 14.970; airData[39].Pr = 0.7032;
-    airData[40].Temperature = 20; airData[40].Lambda = 2.590; airData[40].Ni = 15.060; airData[40].Pr = 0.7030;
-    airData[41].Temperature = 21; airData[41].Lambda = 2.598; airData[41].Ni = 15.154; airData[41].Pr = 0.7028;
-    airData[42].Temperature = 22; airData[42].Lambda = 2.606; airData[42].Ni = 15.248; airData[42].Pr = 0.7026;
-    airData[43].Temperature = 23; airData[43].Lambda = 2.614; airData[43].Ni = 15.342; airData[43].Pr = 0.7024;
-    airData[44].Temperature = 24; airData[44].Lambda = 2.622; airData[44].Ni = 15.436; airData[44].Pr = 0.7022;
-    airData[45].Temperature = 25; airData[45].Lambda = 2.630; airData[45].Ni = 15.530; airData[45].Pr = 0.7020;
-    airData[46].Temperature = 26; airData[46].Lambda = 2.638; airData[46].Ni = 15.624; airData[46].Pr = 0.7018;
-    airData[47].Temperature = 27; airData[47].Lambda = 2.646; airData[47].Ni = 15.718; airData[47].Pr = 0.7016;
-    airData[48].Temperature = 28; airData[48].Lambda = 2.654; airData[48].Ni = 15.812; airData[48].Pr = 0.7014;
-    airData[49].Temperature = 29; airData[49].Lambda = 2.662; airData[49].Ni = 15.906; airData[49].Pr = 0.7012;
-    airData[50].Temperature = 30; airData[50].Lambda = 2.670; airData[50].Ni = 16.000; airData[50].Pr = 0.7010;
+    if (known_X.size() != known_Y.size())
+        return 0;
+
+    double n = known_X.size();
+    double avrX = std::accumulate(known_X.begin(), known_X.end(), 0.0)/n;
+    double avrY = std::accumulate(known_Y.begin(), known_Y.end(), 0.0)/n;
+
+    double dividend = 0.0;
+    double divisor = 0.0;
+
+
+    for (int i = 0; i < n; i++)
+    {
+        dividend += (known_X[i] - avrX)*(known_Y[1] - avrY);
+        divisor += pow((known_X[1] - avrX), 2.0);
+    }
+
+    if (divisor == 0)
+        return 0;
+
+    double b = dividend/divisor;
+    double a = avrY - b*avrX;
+
+    return a + b*x;
 }
 
-
-double getU(double Rs, double Rsi, double Rse)
+inline double getBbc(double V, double A)
 {
-    return 0;
+    return V/A;
+}
+
+inline double getU(double Rs, double Rsi, double Rse)
+{
+    return 1/(Rs + Rsi + Rse);
+}
+
+double getUr(Variables var)
+{
+    double Rsi1 = 0.1;
+    double Rse2 = 0.04;
+    double Bbc = getBbc(var.V, var.A1);
+
+    double delta = 1;
+    double temTu = -100;
+
+    double U1 = 0;
+    double U2 = 0;
+    double Tu = 0;
+    double Gr = 0;
+    double Pr = 0;
+
+    do
+    {
+        U1 = getU(var.Rs1, Rsi1, 0.1);
+        U2 = getU(var.Rs2, Rse2, 0.17);
+        Tu = (var.Ti*U1*var.A1 + var.Te*U2*var.A2 + var.Te*var.Uw*var.Aw + var.Te*0.33*var.n*var.V)/
+                (U1*var.A1 + U2*var.A2 + var.Uw*var.Aw + 0.33*var.n*var.V);
+        double Tse1 = Tu + 0.1*U1*(var.Ti - Tu);
+        double Tsi2 = Tu + 0.17*U2*(Tu - var.Te);
+        double beta = 1/(Tu + 273.15);
+        double Ni = forecast(Tu, airData.Temperature, airData.Ni)*pow(10,-6);
+        Gr = 9.81*beta*pow(Bbc, 3)*(Tse1 - Tsi2)/pow(Ni,2);
+        Pr = forecast(Tu, airData.Temperature, airData.Pr);
+
+        double Ek;
+
+        if( (Pr*Gr) < pow(10,3) )
+            Ek = 1;
+        else if( (Pr*Gr) < pow(10,6) )
+            Ek = 0.105*pow((Pr*Gr),0.3);
+        else
+            Ek = 0.4*pow((Pr*Gr),0.25);
+
+        double LambdaEkv = Ek*forecast(Tu, airData.Temperature, airData.Lambda)*pow(10,-2);
+
+        Rsi1 = Bbc/(2*LambdaEkv);
+        Rse2 = Rsi1;
+
+        delta = Tu - temTu;
+        temTu = Tu;
+    }
+    while( delta < 0.001 );
+
+    double Ur = 1/(1/U1 + var.A1/(var.A2*U2 + var.Aw*var.Uw + 0.33*var.n*var.V));
+    *var.Tu = Tu;
+    *var.Gr = Gr;
+    *var.Pr = Pr;
+    *var.Rse = Rsi1;
+
+    return Ur;
 }

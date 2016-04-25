@@ -7,7 +7,6 @@ roofU::roofU(QWidget *parent) :
     ui(new Ui::roofU)
 {
     ui->setupUi(this);
-    //getU();
 }
 
 roofU::~roofU()
