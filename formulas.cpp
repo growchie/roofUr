@@ -31,27 +31,20 @@ double forecast(const double &x, const std::vector<double> &known_X, const std::
     if (known_X.size() != known_Y.size())
         return 0;
 
-    double n = known_X.size();
-    double avrX = std::accumulate(known_X.begin(), known_X.end(), 0.0)/n;
-    double avrY = std::accumulate(known_Y.begin(), known_Y.end(), 0.0)/n;
-
-    double dividend = 0.0;
-    double divisor = 0.0;
+    /*if ( (x < known_X.begin()) && ( x > known_X.end()) )
+        return 0;*/
 
 
-    for (int i = 0; i < n; i++)
+    int index = 0;
+    for (int i = 0; i < (int)known_X.size(); i++)
     {
-        dividend += (known_X[i] - avrX)*(known_Y[1] - avrY);
-        divisor += pow((known_X[1] - avrX), 2.0);
+        if (x < known_X[i])
+            break;
+        index = i;
     }
 
-    if (divisor == 0)
-        return 0;
+    return known_Y[index] + ((x - known_X[index])/(known_X[index+1]-known_X[index]))*(known_Y[index+1] - known_Y[index]);
 
-    double b = dividend/divisor;
-    double a = avrY - b*avrX;
-
-    return a + b*x;
 }
 
 inline double getBbc(double V, double A)
@@ -66,8 +59,8 @@ inline double getU(double Rs, double Rsi, double Rse)
 
 double getUr(Variables var)
 {
-    double Rsi1 = 0.1;
-    double Rse2 = 0.04;
+    double Rse1 = 0.1;
+    double Rsi2 = 0.17;
     double Bbc = getBbc(var.V, var.A1);
 
     double delta = 1;
@@ -81,12 +74,12 @@ double getUr(Variables var)
 
     do
     {
-        U1 = getU(var.Rs1, Rsi1, 0.1);
-        U2 = getU(var.Rs2, Rse2, 0.17);
+        U1 = getU(var.Rs1, Rse1, 0.1);
+        U2 = getU(var.Rs2, Rsi2, 0.04);
         Tu = (var.Ti*U1*var.A1 + var.Te*U2*var.A2 + var.Te*var.Uw*var.Aw + var.Te*0.33*var.n*var.V)/
                 (U1*var.A1 + U2*var.A2 + var.Uw*var.Aw + 0.33*var.n*var.V);
-        double Tse1 = Tu + 0.1*U1*(var.Ti - Tu);
-        double Tsi2 = Tu + 0.17*U2*(Tu - var.Te);
+        double Tse1 = Tu + Rse1*U1*(var.Ti - Tu);
+        double Tsi2 = Tu - Rsi2*U2*(Tu - var.Te);
         double beta = 1/(Tu + 273.15);
         double Ni = forecast(Tu, airData.Temperature, airData.Ni)*pow(10,-6);
         Gr = 9.81*beta*pow(Bbc, 3)*(Tse1 - Tsi2)/pow(Ni,2);
@@ -103,19 +96,19 @@ double getUr(Variables var)
 
         double LambdaEkv = Ek*forecast(Tu, airData.Temperature, airData.Lambda)*pow(10,-2);
 
-        Rsi1 = Bbc/(2*LambdaEkv);
-        Rse2 = Rsi1;
+        Rse1 = Bbc/(2*LambdaEkv);
+        Rsi2 = Rse1;
 
         delta = Tu - temTu;
         temTu = Tu;
     }
-    while( delta < 0.001 );
+    while( fabs(delta) >= 0.01 );
 
     double Ur = 1/(1/U1 + var.A1/(var.A2*U2 + var.Aw*var.Uw + 0.33*var.n*var.V));
     *var.Tu = Tu;
     *var.Gr = Gr;
     *var.Pr = Pr;
-    *var.Rse = Rsi1;
+    *var.Rse = Rse1;
 
     return Ur;
 }
