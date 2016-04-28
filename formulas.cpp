@@ -1,39 +1,39 @@
 #include "formulas.h"
 #include "math.h"
 #include <vector>
-#include <numeric>
+
+using namespace std;
 
 struct Air {
-    std::vector<double> Temperature = { -20, -19, -18, -17, -16, -15, -14, -13, -12, -11,
-                                        -10, -9, -8, -7, -6, -5, -4, -3, -2, -1,
-                                        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-                                        11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-                                        21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
-    std::vector<double> Lambda = { 2.280, 2.288, 2.296, 2.304, 2.312, 2.320, 2.328, 2.336, 2.344, 2.352,
-                                   2.360, 2.368, 2.376, 2.384, 2.392, 2.400, 2.408, 2.416, 2.424, 2.432,
-                                   2.440, 2.447, 2.454, 2.461, 2.468, 2.475, 2.482, 2.489, 2.496, 2.503, 2.510,
-                                   2.518, 2.526, 2.534, 2.542, 2.550, 2.558, 2.566, 2.574, 2.582, 2.590,
-                                   2.598, 2.606, 2.614, 2.622, 2.630, 2.638, 2.646, 2.654, 2.662, 2.670 }; //Warning!!! Values must be used after pow(10,-2).
-    std::vector<double> Ni = { 12.790, 12.754, 12.718, 12.682, 12.646, 12.610, 12.574, 12.538, 12.502, 12.466,
-                               12.430, 12.515, 12.600, 12.685, 12.770, 12.855, 12.940, 13.025, 13.110, 13.195,
-                               13.280, 13.368, 13.456, 13.544, 13.632, 13.720, 13.808, 13.896, 13.984, 14.072, 14.160,
-                               14.250, 14.340, 14.430, 14.520, 14.610, 14.700, 14.790, 14.880, 14.970, 15.060,
-                               15.154, 15.248, 15.342, 15.436, 15.530, 15.624, 15.718, 15.812, 15.906, 16.000 }; //Warning!!! Values must used after pow(10,-6).
-    std::vector<double> Pr = { 0.7160, 0.7156, 0.7152, 0.7148, 0.7144, 0.7140, 0.7136, 0.7132, 0.7128, 0.7124,
-                               0.7120, 0.7115, 0.7110, 0.7105, 0.7100, 0.7095, 0.7090, 0.7085, 0.7080, 0.7075,
-                               0.7070, 0.7068, 0.7066, 0.7064, 0.7062, 0.7060, 0.7058, 0.7056, 0.7054, 0.7052, 0.7050,
-                               0.7048, 0.7046, 0.7044, 0.7042, 0.7040, 0.7038, 0.7036, 0.7034, 0.7032, 0.7030,
-                               0.7028, 0.7026, 0.7024, 0.7022, 0.7020, 0.7018, 0.7016, 0.7014, 0.7012, 0.7010 };
+    vector<double> Temperature = { -20, -19, -18, -17, -16, -15, -14, -13, -12, -11,
+                                   -10, -9, -8, -7, -6, -5, -4, -3, -2, -1,
+                                   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                                   11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                                   21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
+    vector<double> Lambda = { 2.280E-2, 2.288E-2, 2.296E-2, 2.304E-2, 2.312E-2, 2.320E-2, 2.328E-2, 2.336E-2, 2.344E-2, 2.352E-2,
+                              2.360E-2, 2.368E-2, 2.376E-2, 2.384E-2, 2.392E-2, 2.400E-2, 2.408E-2, 2.416E-2, 2.424E-2, 2.432E-2,
+                              2.440E-2, 2.447E-2, 2.454E-2, 2.461E-2, 2.468E-2, 2.475E-2, 2.482E-2, 2.489E-2, 2.496E-2, 2.503E-2, 2.510E-2,
+                              2.518E-2, 2.526E-2, 2.534E-2, 2.542E-2, 2.550E-2, 2.558E-2, 2.566E-2, 2.574E-2, 2.582E-2, 2.590E-2,
+                              2.598E-2, 2.606E-2, 2.614E-2, 2.622E-2, 2.630E-2, 2.638E-2, 2.646E-2, 2.654E-2, 2.662E-2, 2.670E-2 };
+    vector<double> Ni = { 12.790E-6, 12.754E-6, 12.718E-6, 12.682E-6, 12.646E-6, 12.610E-6, 12.574E-6, 12.538E-6, 12.502E-6, 12.466E-6,
+                          12.430E-6, 12.515E-6, 12.600E-6, 12.685E-6, 12.770E-6, 12.855E-6, 12.940E-6, 13.025E-6, 13.110E-6, 13.195E-6,
+                          13.280E-6, 13.368E-6, 13.456E-6, 13.544E-6, 13.632E-6, 13.720E-6, 13.808E-6, 13.896E-6, 13.984E-6, 14.072E-6, 14.160E-6,
+                          14.250E-6, 14.340E-6, 14.430E-6, 14.520E-6, 14.610E-6, 14.700E-6, 14.790E-6, 14.880E-6, 14.970E-6, 15.060E-6,
+                          15.154E-6, 15.248E-6, 15.342E-6, 15.436E-6, 15.530E-6, 15.624E-6, 15.718E-6, 15.812E-6, 15.906E-6, 16.000E-6 };
+    vector<double> Pr = { 0.7160, 0.7156, 0.7152, 0.7148, 0.7144, 0.7140, 0.7136, 0.7132, 0.7128, 0.7124,
+                          0.7120, 0.7115, 0.7110, 0.7105, 0.7100, 0.7095, 0.7090, 0.7085, 0.7080, 0.7075,
+                          0.7070, 0.7068, 0.7066, 0.7064, 0.7062, 0.7060, 0.7058, 0.7056, 0.7054, 0.7052, 0.7050,
+                          0.7048, 0.7046, 0.7044, 0.7042, 0.7040, 0.7038, 0.7036, 0.7034, 0.7032, 0.7030,
+                          0.7028, 0.7026, 0.7024, 0.7022, 0.7020, 0.7018, 0.7016, 0.7014, 0.7012, 0.7010 };
 } airData;
 
-double forecast(const double &x, const std::vector<double> &known_X, const std::vector<double> &known_Y )
+double forecast(double x, const std::vector<double> &known_X, const std::vector<double> &known_Y )
 {
     if (known_X.size() != known_Y.size())
-        return 0;
+        throw "Vector size mismatch.";
 
-    /*if ( (x < known_X.begin()) && ( x > known_X.end()) )
-        return 0;*/
-
+   if ( (x < known_X.front()) && ( x > known_X.back()) )
+        throw "Value X out of range.";
 
     int index = 0;
     for (int i = 0; i < (int)known_X.size(); i++)
@@ -43,7 +43,7 @@ double forecast(const double &x, const std::vector<double> &known_X, const std::
         index = i;
     }
 
-    return known_Y[index] + ((x - known_X[index])/(known_X[index+1]-known_X[index]))*(known_Y[index+1] - known_Y[index]);
+    return known_Y[index] + ((x - known_X[index])/(known_X[index+1] - known_X[index]))*(known_Y[index+1] - known_Y[index]);
 
 }
 
@@ -81,20 +81,20 @@ double getUr(Variables var)
         double Tse1 = Tu + Rse1*U1*(var.Ti - Tu);
         double Tsi2 = Tu - Rsi2*U2*(Tu - var.Te);
         double beta = 1/(Tu + 273.15);
-        double Ni = forecast(Tu, airData.Temperature, airData.Ni)*pow(10,-6);
-        Gr = 9.81*beta*pow(Bbc, 3)*(Tse1 - Tsi2)/pow(Ni,2);
+        double Ni = forecast(Tu, airData.Temperature, airData.Ni);
+        Gr = 9.81*beta*pow(Bbc, 3)*(Tse1 - Tsi2)/pow(Ni, 2);
         Pr = forecast(Tu, airData.Temperature, airData.Pr);
 
-        double Ek;
+        double Ek = 0;
 
         if( (Pr*Gr) < pow(10,3) )
             Ek = 1;
         else if( (Pr*Gr) < pow(10,6) )
-            Ek = 0.105*pow((Pr*Gr),0.3);
+            Ek = 0.105*pow((Pr*Gr), 0.3);
         else
-            Ek = 0.4*pow((Pr*Gr),0.25);
+            Ek = 0.4*pow((Pr*Gr), 0.25);
 
-        double LambdaEkv = Ek*forecast(Tu, airData.Temperature, airData.Lambda)*pow(10,-2);
+        double LambdaEkv = Ek*forecast(Tu, airData.Temperature, airData.Lambda);
 
         Rse1 = Bbc/(2*LambdaEkv);
         Rsi2 = Rse1;
