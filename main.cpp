@@ -1,5 +1,6 @@
 #include "roofu.h"
 #include <QApplication>
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +11,14 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("roofU");
     QCoreApplication::setApplicationVersion("1.0.0");
 
+    QTranslator translator;
+#if defined(Q_OS_MAC)
+    translator.load(QApplication::applicationDirPath().append("/../Resources/roofu_bg"));
+#else
+    translator.load("roofu");
+#endif
+
+    a.installTranslator(&translator);
     roofU w;
     w.show();
 
