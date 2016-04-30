@@ -6,427 +6,1050 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>650</width>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>650</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
   </property>
   <property name="windowTitle">
    <string>roofU</string>
   </property>
-  <widget class="QLabel" name="lblV">
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>30</y>
-     <width>16</width>
-     <height>16</height>
+     <x>10</x>
+     <y>10</y>
+     <width>591</width>
+     <height>411</height>
     </rect>
    </property>
    <property name="text">
-    <string notr="true">V</string>
+    <string/>
    </property>
-   <property name="buddy">
-    <cstring>leV</cstring>
+   <property name="pixmap">
+    <pixmap resource="roofu.qrc">:/Images/background.jpg</pixmap>
    </property>
-  </widget>
-  <widget class="QLineEdit" name="leV">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>30</y>
-     <width>61</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblN">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>70</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">n</string>
-   </property>
-   <property name="buddy">
-    <cstring>leN</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leN">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>70</y>
-     <width>61</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0.1</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblTi">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>100</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Symbol';&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;i&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="buddy">
-    <cstring>leTi</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leTi">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>100</y>
-     <width>61</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblTe">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>130</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;T&lt;span style=&quot; vertical-align:sub;&quot;&gt;e&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="buddy">
-    <cstring>leTe</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leTe">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>130</y>
-     <width>61</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblRs1">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>30</y>
-     <width>21</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;R&lt;span style=&quot; vertical-align:sub;&quot;&gt;S1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="buddy">
-    <cstring>leRs1</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leRs1">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>30</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblA1">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>60</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="buddy">
-    <cstring>leA1</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leA1">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>60</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblRs2">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>90</y>
-     <width>21</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;R&lt;span style=&quot; vertical-align:sub;&quot;&gt;S2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="buddy">
-    <cstring>leRs2</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leRs2">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>90</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblA2">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>120</y>
-     <width>21</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="buddy">
-    <cstring>leA2</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leA2">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>120</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblUw">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>160</y>
-     <width>21</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U&lt;span style=&quot; vertical-align:sub;&quot;&gt;W&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="buddy">
-    <cstring>leUw</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leUw">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>160</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblAw">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>190</y>
-     <width>21</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A&lt;span style=&quot; vertical-align:sub;&quot;&gt;W&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-   <property name="buddy">
-    <cstring>leAw</cstring>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leAw">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>190</y>
-     <width>113</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>0</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblTu">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>190</y>
-     <width>16</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Tu</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leTu">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>190</y>
-     <width>61</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="maxLength">
-    <number>5</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblU1">
-   <property name="enabled">
+   <property name="scaledContents">
     <bool>true</bool>
    </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>220</y>
-     <width>21</width>
-     <height>16</height>
+     <x>480</x>
+     <y>230</y>
+     <width>161</width>
+     <height>71</height>
     </rect>
    </property>
-   <property name="text">
-    <string notr="true">U1</string>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Midlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Dark">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Mid">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="AlternateBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="NoRole">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Midlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Dark">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Mid">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="AlternateBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="NoRole">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="WindowText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Button">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Midlight">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Dark">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Mid">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="ButtonText">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Shadow">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="AlternateBase">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="NoRole">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
    </property>
-  </widget>
-  <widget class="QLineEdit" name="leU1">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>220</y>
-     <width>61</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="maxLength">
-    <number>5</number>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblU2">
-   <property name="enabled">
+   <property name="autoFillBackground">
     <bool>true</bool>
    </property>
+   <property name="title">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lblAw">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A&lt;span style=&quot; vertical-align:sub;&quot;&gt;W&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leAw</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="leUw">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="lblAw_4">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;W/m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;K&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leUw</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="lblAw_2">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leAw</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="leAw">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="lblUw">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U&lt;span style=&quot; vertical-align:sub;&quot;&gt;W&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leUw</cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>250</y>
-     <width>21</width>
-     <height>16</height>
+     <x>230</x>
+     <y>320</y>
+     <width>171</width>
+     <height>141</height>
     </rect>
    </property>
-   <property name="text">
-    <string notr="true">U2</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="leU2">
-   <property name="enabled">
+   <property name="autoFillBackground">
     <bool>false</bool>
    </property>
+   <property name="title">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="4" column="0">
+     <widget class="QLabel" name="lblU1">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leU1</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="lblA1">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leA1</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="lblRs1">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;R&lt;span style=&quot; vertical-align:sub;&quot;&gt;S1&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leRs1</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLabel" name="lblAw_3">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leA1</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="leRs1">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="leA1">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QLabel" name="lblAw_5">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;K/W&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leRs1</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QLabel" name="lblAw_6">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;W/m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;K&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leU1</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLineEdit" name="leU1">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="maxLength">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLineEdit" name="leTi">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lblTi">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Symbol';&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;i&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leTi</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="lblAw_7">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leTi</cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>250</y>
-     <width>61</width>
-     <height>21</height>
+     <x>350</x>
+     <y>0</y>
+     <width>151</width>
+     <height>131</height>
     </rect>
    </property>
-   <property name="maxLength">
-    <number>5</number>
+   <property name="autoFillBackground">
+    <bool>true</bool>
    </property>
+   <property name="title">
+    <string notr="true"/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
+    <item row="3" column="0">
+     <widget class="QLabel" name="lblU2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leU2</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="lblA2">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leA2</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="lblAw_9">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;K/W&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leRs2</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="lblRs2">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;R&lt;span style=&quot; vertical-align:sub;&quot;&gt;S2&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leRs2</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="leA2">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLabel" name="lblAw_10">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;W/m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;K&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leU2</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="leRs2">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="leU2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="maxLength">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lblTe">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;T&lt;span style=&quot; vertical-align:sub;&quot;&gt;e&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leTe</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="leTe">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="lblAw_8">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leA2</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="lblAw_14">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leTe</cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QLabel" name="lblUr">
+  <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>260</y>
-     <width>16</width>
-     <height>16</height>
+     <x>250</x>
+     <y>210</y>
+     <width>131</width>
+     <height>91</height>
     </rect>
    </property>
-   <property name="text">
-    <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U&lt;span style=&quot; vertical-align:sub;&quot;&gt;R&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   <property name="autoFillBackground">
+    <bool>true</bool>
    </property>
+   <property name="title">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string notr="true">Gr=</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lblTu">
+      <property name="text">
+       <string notr="true">Tu=</string>
+      </property>
+      <property name="buddy">
+       <cstring>leTu</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="leTu">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="maxLength">
+       <number>4</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="lblAw_11">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leTu</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string notr="true">Pr=</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="2">
+     <widget class="QLineEdit" name="leGr">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="maxLength">
+       <number>12</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" colspan="2">
+     <widget class="QLineEdit" name="lePr">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="maxLength">
+       <number>6</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QLineEdit" name="leUr">
-   <property name="enabled">
+  <widget class="QGroupBox" name="groupBox_5">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>150</y>
+     <width>151</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
     <bool>false</bool>
    </property>
+   <property name="title">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="1" column="0">
+     <widget class="QLabel" name="lblN">
+      <property name="text">
+       <string notr="true">n=</string>
+      </property>
+      <property name="buddy">
+       <cstring>leN</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="lblV">
+      <property name="text">
+       <string notr="true">V=</string>
+      </property>
+      <property name="buddy">
+       <cstring>leV</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="leV">
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="leN">
+      <property name="text">
+       <string notr="true">0.1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="lblAw_12">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leV</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="lblAw_13">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;h&lt;span style=&quot; vertical-align:super;&quot;&gt;-1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leN</cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_6">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>260</y>
-     <width>61</width>
-     <height>21</height>
+     <x>460</x>
+     <y>420</y>
+     <width>181</width>
+     <height>71</height>
     </rect>
    </property>
-   <property name="maxLength">
-    <number>5</number>
+   <property name="title">
+    <string>Results</string>
    </property>
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="leUr">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="maxLength">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="lblUr">
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;U&lt;/span&gt;&lt;span style=&quot; font-weight:600; vertical-align:sub;&quot;&gt;R&lt;/span&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;=&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leUr</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="lblAw_15">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;W/m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;K&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="buddy">
+       <cstring>leU1</cstring>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <tabstops>
+  <tabstop>leV</tabstop>
+  <tabstop>leN</tabstop>
+  <tabstop>leTe</tabstop>
+  <tabstop>leA2</tabstop>
+  <tabstop>leRs2</tabstop>
+  <tabstop>leTi</tabstop>
+  <tabstop>leA1</tabstop>
+  <tabstop>leRs1</tabstop>
+  <tabstop>leAw</tabstop>
+  <tabstop>leUw</tabstop>
+  <tabstop>leU1</tabstop>
+  <tabstop>leTu</tabstop>
+  <tabstop>leU2</tabstop>
+ </tabstops>
+ <resources>
+  <include location="roofu.qrc"/>
+ </resources>
  <connections/>
 </ui>

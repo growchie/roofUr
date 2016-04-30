@@ -22,6 +22,9 @@ private:
     double Rs2;
     double V, Ti, Te, A1, A2, Uw, Aw, Ur, n;
     double Pr, Gr, Tu, Rse;
+    unsigned char dataFilled;
+
+    void calculateUr(void);
 
 public slots:
     void getRs1(void);

@@ -11,6 +11,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = roofu
 TEMPLATE = app
 
+win32 {
+    RC_FILE = roofu.rc
+}
+
+unix {
+    ICON = roofu.icns
+}
 
 SOURCES += main.cpp\
         roofu.cpp \
@@ -20,3 +27,11 @@ HEADERS  += roofu.h \
     formulas.h
 
 FORMS    += roofu.ui
+
+RESOURCES += \
+    roofu.qrc
+
+TRANSLATIONS += roofu_bg.ts
+
+DISTFILES += \
+    roofu.rc
