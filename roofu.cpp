@@ -18,6 +18,24 @@ roofU::roofU(QWidget *parent) :
     connect(ui->leTi,SIGNAL(editingFinished()),this,SLOT(getTi()));
     connect(ui->lblUw,SIGNAL(editingFinished()),this,SLOT(getUw()));
     connect(ui->leV,SIGNAL(editingFinished()),this,SLOT(getV()));
+
+    QDoubleValidator *tempValidator = new QDoubleValidator(-20, 30, 1);
+    tempValidator->setLocale(QLocale::C);
+    QDoubleValidator *volAreaValidator = new QDoubleValidator(0, 99999, 2);
+    volAreaValidator->setLocale(QLocale::C);
+    QDoubleValidator *resValidator = new QDoubleValidator(0.1, 99, 3);
+    resValidator->setLocale(QLocale::C);
+
+    ui->leV->setValidator(volAreaValidator);
+    ui->leN->setValidator(resValidator);
+    ui->leTe->setValidator(tempValidator);
+    ui->leTi->setValidator(tempValidator);
+    ui->leRs1->setValidator(resValidator);
+    ui->leRs2->setValidator(resValidator);
+    ui->leUw->setValidator(resValidator);
+    ui->leA1->setValidator(volAreaValidator);
+    ui->leA2->setValidator(volAreaValidator);
+    ui->leAw->setValidator(volAreaValidator);
 }
 
 roofU::~roofU()
@@ -91,5 +109,10 @@ void roofU::getAw(void)
     exVars.V = V;
 
     Ur = getUr(exVars);
+
+    ui->leUr->setText(QVariant(Ur).toString());
+    ui->leTu->setText(QVariant(Tu).toString());
+    ui->leU1->setText(QVariant((1/(Rse+Rs1+0.1))).toString());
+    ui->leU2->setText(QVariant((1/(Rse+Rs2+0.04))).toString());
 }
 
