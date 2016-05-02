@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 #if defined(Q_OS_MAC)
     translator.load(QApplication::applicationDirPath().append("/../Resources/roofu_bg"));
 #else
-    translator.load("roofu");
+    translator.load("roofu_bg");
 #endif
 
     a.installTranslator(&translator);
