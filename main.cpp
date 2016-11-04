@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("Toploengineering-VV Ltd.");
     QCoreApplication::setOrganizationDomain("hvac-bg.com");
     QCoreApplication::setApplicationName("roofU");
-    QCoreApplication::setApplicationVersion("1.0.0");
+    QCoreApplication::setApplicationVersion("1.0.1");
 
     QTranslator translator;
 #if defined(Q_OS_MAC)
