@@ -1771,22 +1771,22 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
+  <tabstop>leTe</tabstop>
+  <tabstop>leA2</tabstop>
+  <tabstop>leRs2</tabstop>
+  <tabstop>leU2</tabstop>
   <tabstop>leV</tabstop>
   <tabstop>leN</tabstop>
   <tabstop>leTi</tabstop>
   <tabstop>leA1</tabstop>
   <tabstop>leRs1</tabstop>
-  <tabstop>leTe</tabstop>
-  <tabstop>leA2</tabstop>
-  <tabstop>leRs2</tabstop>
   <tabstop>leAw</tabstop>
   <tabstop>leUw</tabstop>
-  <tabstop>leU1</tabstop>
-  <tabstop>leGr</tabstop>
   <tabstop>lePr</tabstop>
   <tabstop>leUr</tabstop>
   <tabstop>leTu</tabstop>
-  <tabstop>leU2</tabstop>
+  <tabstop>leU1</tabstop>
+  <tabstop>leGr</tabstop>
  </tabstops>
  <resources>
   <include location="roofu.qrc"/>
