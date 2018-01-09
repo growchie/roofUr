@@ -71,14 +71,14 @@ roofU::~roofU()
 
 void roofU::getRs1(void)
 {
-    Rs1 = ui->leRs1->text().toDouble();
+    Rs1 = toDouble(ui->leRs1->text());
     dataFilled |= 1 << 0;
     calculateUr();
 }
 
 void roofU::getRs2(void)
 {
-    Rs2 = ui->leRs2->text().toDouble();
+    Rs2 = toDouble(ui->leRs2->text());
     dataFilled |= 1 << 1;
     calculateUr();
 }
@@ -86,54 +86,54 @@ void roofU::getRs2(void)
 
 void roofU::getV(void)
 {
-    V = ui->leV->text().toDouble();
+    V = toDouble(ui->leV->text());
     dataFilled |= 1 << 2;
     calculateUr();
 }
 
 void roofU::getTi(void)
 {
-    Ti = ui->leTi->text().toDouble();
+    Ti = toDouble(ui->leTi->text());
     dataFilled |= 1 << 3;
     calculateUr();
 }
 
 void roofU::getTe(void)
 {
-    Te = ui->leTe->text().toDouble();
+    Te = toDouble(ui->leTe->text());
     dataFilled |= 1 << 4;
     calculateUr();
 }
 
 void roofU::getA1(void)
 {
-    A1 = ui->leA1->text().toDouble();
+    A1 = toDouble(ui->leA1->text());
     dataFilled |= 1 << 5;
     calculateUr();
 }
 
 void roofU::getA2(void)
 {
-    A2 = ui->leA2->text().toDouble();
+    A2 = toDouble(ui->leA2->text());
     dataFilled |= 1 << 6;
     calculateUr();
 }
 
 void roofU::getN(void)
 {
-    n = ui->leN->text().toDouble();
+    n = toDouble(ui->leN->text());
     calculateUr();
 }
 
 void roofU::getUw(void)
 {
-    Uw = ui->leUw->text().toDouble();
+    Uw = toDouble(ui->leUw->text());
     calculateUr();
 }
 
 void roofU::getAw(void)
 {
-    Aw = ui->leAw->text().toDouble();
+    Aw = toDouble(ui->leAw->text());
     calculateUr();
 }
 
@@ -165,5 +165,26 @@ void roofU::calculateUr(void)
         ui->leU2->setText(QVariant((1/(Rse+Rs2+0.04))).toString());
         ui->leGr->setText(QVariant(Gr).toString());
         ui->lePr->setText(QVariant(Pr).toString());
+    }
+}
+
+double roofU::toDouble(QString stringDouble)
+{
+    QLocale c(QLocale::C);
+    QLocale current(QLocale::system());
+    bool success = false;
+    double data = 0;
+    data = current.toDouble(stringDouble, &success);
+    if (success)
+    {
+        return data;
+    }
+    else
+    {
+        data = c.toDouble(stringDouble, &success);
+        if(success)
+            return data;
+        else
+            return 0;
     }
 }

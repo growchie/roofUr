@@ -59,6 +59,7 @@ public slots:
     void getUw(void);
     void getAw(void);
     void getN(void);
+    double toDouble(QString stringDouble);
 
 };
 
