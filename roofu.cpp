@@ -23,6 +23,7 @@
 #include "roofu.h"
 #include "ui_roofu.h"
 #include "formulas.h"
+#include <QDoubleValidator>
 
 roofU::roofU(QWidget *parent) :
     QWidget(parent),
@@ -34,16 +35,16 @@ roofU::roofU(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->leA1,SIGNAL(editingFinished()),this,SLOT(getA1()));
-    connect(ui->leA2,SIGNAL(editingFinished()),this,SLOT(getA2()));
-    connect(ui->leAw,SIGNAL(editingFinished()),this,SLOT(getAw()));
-    connect(ui->leN,SIGNAL(editingFinished()),this,SLOT(getN()));
-    connect(ui->leRs1,SIGNAL(editingFinished()),this,SLOT(getRs1()));
-    connect(ui->leRs2,SIGNAL(editingFinished()),this,SLOT(getRs2()));
-    connect(ui->leTe,SIGNAL(editingFinished()),this,SLOT(getTe()));
-    connect(ui->leTi,SIGNAL(editingFinished()),this,SLOT(getTi()));
-    connect(ui->leUw,SIGNAL(editingFinished()),this,SLOT(getUw()));
-    connect(ui->leV,SIGNAL(editingFinished()),this,SLOT(getV()));
+    connect(ui->leA1,&QLineEdit::editingFinished,this,&roofU::getA1);
+    connect(ui->leA2,&QLineEdit::editingFinished,this,&roofU::getA2);
+    connect(ui->leAw,&QLineEdit::editingFinished,this,&roofU::getAw);
+    connect(ui->leN,&QLineEdit::editingFinished,this,&roofU::getN);
+    connect(ui->leRs1,&QLineEdit::editingFinished,this,&roofU::getRs1);
+    connect(ui->leRs2,&QLineEdit::editingFinished,this,&roofU::getRs2);
+    connect(ui->leTe,&QLineEdit::editingFinished,this,&roofU::getTe);
+    connect(ui->leTi,&QLineEdit::editingFinished,this,&roofU::getTi);
+    connect(ui->leUw,&QLineEdit::editingFinished,this,&roofU::getUw);
+    connect(ui->leV,&QLineEdit::editingFinished,this,&roofU::getV);
 
     QDoubleValidator *tempValidator = new QDoubleValidator(-20, 30, 1);
     tempValidator->setLocale(QLocale::C);
@@ -159,12 +160,12 @@ void roofU::calculateUr(void)
 
         Ur = getUr(exVars);
 
-        ui->leUr->setText(QVariant(Ur).toString());
-        ui->leTu->setText(QVariant(Tu).toString());
-        ui->leU1->setText(QVariant((1/(Rse+Rs1+0.1))).toString());
-        ui->leU2->setText(QVariant((1/(Rse+Rs2+0.04))).toString());
-        ui->leGr->setText(QVariant(Gr).toString());
-        ui->lePr->setText(QVariant(Pr).toString());
+        ui->leUr->setText(QString::number(Ur, 'f', 3));
+        ui->leTu->setText(QString::number(Tu, 'f', 1));
+        ui->leU1->setText(QString::number((1/(Rse+Rs1+0.1)), 'f', 2));
+        ui->leU2->setText(QString::number((1/(Rse+Rs2+0.04)), 'f', 2));
+        ui->leGr->setText(QString::number(Gr, 'e', 2));
+        ui->lePr->setText(QString::number(Pr, 'f', 4));
     }
 }
 

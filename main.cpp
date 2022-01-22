@@ -34,13 +34,16 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationVersion("1.0.2");
 
     QTranslator translator;
+    bool hasTranslator = true;
 #if defined(Q_OS_MAC)
     translator.load(QApplication::applicationDirPath().append("/../Resources/roofu_bg"));
 #else
-    translator.load("roofu_bg");
+    hasTranslator = translator.load("roofu_bg");
 #endif
 
-    a.installTranslator(&translator);
+    if(hasTranslator)
+        a.installTranslator(&translator);
+
     roofU w;
     w.show();
 
