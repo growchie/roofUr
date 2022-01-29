@@ -31,12 +31,12 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("Toploengineering-VV Ltd.");
     QCoreApplication::setOrganizationDomain("hvac-bg.com");
     QCoreApplication::setApplicationName("roofU");
-    QCoreApplication::setApplicationVersion("1.0.2");
+    QCoreApplication::setApplicationVersion("1.30.1");
 
     QTranslator translator;
     bool hasTranslator = true;
 #if defined(Q_OS_MAC)
-    translator.load(QApplication::applicationDirPath().append("/../Resources/roofu_bg"));
+    hasTranslator = translator.load(QApplication::applicationDirPath().append("/../Resources/roofu_bg"));
 #else
     hasTranslator = translator.load("roofu_bg");
 #endif
