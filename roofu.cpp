@@ -47,14 +47,12 @@ roofU::roofU(QWidget *parent) :
     connect(ui->leV,&QLineEdit::editingFinished,this,&roofU::getV);
 
     QDoubleValidator *tempValidator = new QDoubleValidator(-20, 30, 1);
-    tempValidator->setLocale(QLocale::C);
     QDoubleValidator *volAreaValidator = new QDoubleValidator(0, 99999, 2);
-    volAreaValidator->setLocale(QLocale::C);
     QDoubleValidator *resValidator = new QDoubleValidator(0.001, 99, 3);
-    resValidator->setLocale(QLocale::C);
 
     ui->leV->setValidator(volAreaValidator);
     ui->leN->setValidator(resValidator);
+    ui->leN->setText(sysLocale.toString(0.1, 'f' , 1));
     ui->leTe->setValidator(tempValidator);
     ui->leTi->setValidator(tempValidator);
     ui->leRs1->setValidator(resValidator);
@@ -72,14 +70,14 @@ roofU::~roofU()
 
 void roofU::getRs1(void)
 {
-    Rs1 = toDouble(ui->leRs1->text());
+    Rs1 = sysLocale.toDouble(ui->leRs1->text());
     dataFilled |= 1 << 0;
     calculateUr();
 }
 
 void roofU::getRs2(void)
 {
-    Rs2 = toDouble(ui->leRs2->text());
+    Rs2 = sysLocale.toDouble(ui->leRs2->text());
     dataFilled |= 1 << 1;
     calculateUr();
 }
@@ -87,54 +85,54 @@ void roofU::getRs2(void)
 
 void roofU::getV(void)
 {
-    V = toDouble(ui->leV->text());
+    V = sysLocale.toDouble(ui->leV->text());
     dataFilled |= 1 << 2;
     calculateUr();
 }
 
 void roofU::getTi(void)
 {
-    Ti = toDouble(ui->leTi->text());
+    Ti = sysLocale.toDouble(ui->leTi->text());
     dataFilled |= 1 << 3;
     calculateUr();
 }
 
 void roofU::getTe(void)
 {
-    Te = toDouble(ui->leTe->text());
+    Te = sysLocale.toDouble(ui->leTe->text());
     dataFilled |= 1 << 4;
     calculateUr();
 }
 
 void roofU::getA1(void)
 {
-    A1 = toDouble(ui->leA1->text());
+    A1 = sysLocale.toDouble(ui->leA1->text());
     dataFilled |= 1 << 5;
     calculateUr();
 }
 
 void roofU::getA2(void)
 {
-    A2 = toDouble(ui->leA2->text());
+    A2 = sysLocale.toDouble(ui->leA2->text());
     dataFilled |= 1 << 6;
     calculateUr();
 }
 
 void roofU::getN(void)
 {
-    n = toDouble(ui->leN->text());
+    n = sysLocale.toDouble(ui->leN->text());
     calculateUr();
 }
 
 void roofU::getUw(void)
 {
-    Uw = toDouble(ui->leUw->text());
+    Uw = sysLocale.toDouble(ui->leUw->text());
     calculateUr();
 }
 
 void roofU::getAw(void)
 {
-    Aw = toDouble(ui->leAw->text());
+    Aw = sysLocale.toDouble(ui->leAw->text());
     calculateUr();
 }
 
@@ -160,32 +158,11 @@ void roofU::calculateUr(void)
 
         Ur = getUr(exVars);
 
-        ui->leUr->setText(QString::number(Ur, 'f', 3));
-        ui->leTu->setText(QString::number(Tu, 'f', 1));
-        ui->leU1->setText(QString::number((1/(Rse+Rs1+0.1)), 'f', 2));
-        ui->leU2->setText(QString::number((1/(Rse+Rs2+0.04)), 'f', 2));
-        ui->leGr->setText(QString::number(Gr, 'e', 2));
-        ui->lePr->setText(QString::number(Pr, 'f', 4));
-    }
-}
-
-double roofU::toDouble(QString stringDouble)
-{
-    QLocale c(QLocale::C);
-    QLocale current(QLocale::system());
-    bool success = false;
-    double data = 0;
-    data = current.toDouble(stringDouble, &success);
-    if (success)
-    {
-        return data;
-    }
-    else
-    {
-        data = c.toDouble(stringDouble, &success);
-        if(success)
-            return data;
-        else
-            return 0;
+        ui->leUr->setText(sysLocale.toString(Ur, 'f', 5));
+        ui->leTu->setText(sysLocale.toString(Tu, 'f', 2));
+        ui->leU1->setText(sysLocale.toString((1.0/(Rse+Rs1+0.1)), 'f', 2));
+        ui->leU2->setText(sysLocale.toString((1.0/(Rse+Rs2+0.04)), 'f', 2));
+        ui->leGr->setText(sysLocale.toString(Gr, 'e', 2));
+        ui->lePr->setText(sysLocale.toString(Pr, 'f', 4));
     }
 }

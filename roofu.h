@@ -24,6 +24,7 @@
 #define ROOFU_H
 
 #include <QWidget>
+#include <QLocale>
 
 namespace Ui {
 class roofU;
@@ -34,12 +35,13 @@ class roofU : public QWidget
     Q_OBJECT
 
 public:
-    explicit roofU(QWidget *parent = 0);
-    ~roofU();
+    explicit roofU(QWidget *parent = nullptr);
+    ~roofU() override;
 
 private:
     Ui::roofU *ui;
 
+    QLocale sysLocale;
     double Rs1;
     double Rs2;
     double V, Ti, Te, A1, A2, Uw, Aw, Ur, n;
@@ -59,8 +61,6 @@ public slots:
     void getUw(void);
     void getAw(void);
     void getN(void);
-    double toDouble(QString stringDouble);
-
 };
 
 #endif // ROOFU_H

@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("Toploengineering-VV Ltd.");
     QCoreApplication::setOrganizationDomain("hvac-bg.com");
     QCoreApplication::setApplicationName("roofU");
-    QCoreApplication::setApplicationVersion("1.30.1");
+    QCoreApplication::setApplicationVersion("1.30.2");
 
     QTranslator translator;
     bool hasTranslator = true;
